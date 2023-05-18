@@ -1,7 +1,7 @@
 
 import { Link, NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { FaUserTie } from "react-icons/fa";
+// import { FaUserTie } from "react-icons/fa";
 // import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
@@ -10,7 +10,7 @@ import { useState } from "react";
 const Navbar = () => {
     const [show, setShow] = useState(false);
     return (
-        <nav className="w-full bg-[#FFFFFF]  z-50  shadow-lg py-5 h-20 px-5">
+        <nav className="w-full fixed z-50 py-5 h-20 px-5">
         <div className="max-w-6xl mx-auto  flex justify-between items-center font-bodyFont">
           <div>
             <Link to={"/"}>
@@ -62,7 +62,7 @@ const Navbar = () => {
               Contact
             </NavLink>
             <NavLink
-              to="/register"
+              to="/signUp"
               className={({ isActive }) => (isActive ? "text-[#742BFD]" : "")}
             >
               Sign up
