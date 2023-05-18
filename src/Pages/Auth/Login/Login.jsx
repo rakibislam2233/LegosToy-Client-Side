@@ -1,43 +1,81 @@
 import Lottie from "lottie-react";
-import login from "../../../assets/Lotti/Login.json";
+import LoginLotti from "../../../assets/Lotti/Login.json";
 import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
-  const handelSingIn = () => {};
-  const LoginWithgoogle = () => {};
-  const LoginWithgitHub = () => {};
+  const {login,googleLogin,gitHubLogin} = useContext(UserContext)
+  const naviget = useNavigate()
+  const handelSingIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    setError("");
+    console.log(email, password);
+    if (email == "") {
+      return setError("Please enter your email");
+    } else if (password.length == 0) {
+      return setError("Please enter your password");
+    }
+    login(email, password)
+    .then((result) => {
+      const users = result.user;
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Login Successfully',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      setError("");
+      naviget('/')
+      // naviget(from, { replace: true });
+      form.reset();
+    })
+    .catch((err) => {
+      setError(err.message)
+    });
+   
+  };
+  const LoginWithgoogle = () => {
+    googleLogin()
+    .then(result =>{
+      const user = result.user;
+      naviget("/");
+  })
+  .catch(err=>{
+      setError(err.message)
+  })
+  };
+  const LoginWithgitHub = () => {
+   gitHubLogin()
+    .then(result =>{
+      const user = result.user;
+      naviget("/");
+  })
+  .catch(err=>{
+      setError(err.message)
+  })
+  };
   return (
     <div className="hero min-h-screen bg-base-200 pt-20">
       <div className="hero-content flex-col lg:flex-row gap-5">
         <div className="w-full md:max-w-1/2 text-center lg:text-left">
-          <Lottie animationData={login} loop={true} />
+          <Lottie animationData={LoginLotti} loop={true} />
         </div>
         <div className="w-full md:max-w-1/2 card flex-shrink-0  max-w-sm shadow-2xl bg-base-100 py-5">
-        {error && (
-          <div className="alert alert-error shadow-lg my-2">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="stroke-current flex-shrink-0 h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              <h2>{error}</h2>
-            </div>
-          </div>
-        )}
           <form onSubmit={handelSingIn} className="w-4/5 mx-auto relative">
           <h3 className="text-center text-2xl font-semibold">Login</h3>
+          {error && (
+          <div className="border p-2 rounded border-rose-700 my-2">
+              <h2 className="text-rose-700">{error}</h2>
+          </div>
+        )}
             <div className="form-control">
               <label className="label">
                 <span className="text-xl">Email</span>

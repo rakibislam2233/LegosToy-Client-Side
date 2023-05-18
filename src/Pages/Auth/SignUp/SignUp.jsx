@@ -1,12 +1,17 @@
 import Lottie from "lottie-react";
 import login from "../../../assets/Lotti/Login.json";
 import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
+import {updateProfile } from "firebase/auth";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
+  const { createNewUser,logOut,gitHubLogin,googleLogin} = useContext(UserContext)
+  const naviget = useNavigate()
   const handelSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -27,14 +32,22 @@ const SignUp = () => {
     else if(password.length<6){
       return setError("Password minimum six characters")
     }
-    return
-    createUser(email, password)
+    createNewUser(email, password)
       .then((result) => {
         const users = result.user;
-        updateUserInfo(users, name, photoUrl);
-        toast.success("Your Register Successfully");
-        naviget("/login");
+        updateProfile(users,{
+          displayName:name,
+          photoURL:photoUrl
+        })
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Create New User Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
         logOut()
+        naviget("/login");
         form.reset();
       })
       .catch((err) => {
@@ -42,8 +55,26 @@ const SignUp = () => {
       });
 
   };
-  const LoginWithgoogle = () => {};
-  const LoginWithgitHub = () => {};
+  const LoginWithgoogle = () => {
+    googleLogin()
+    .then(result =>{
+      const user = result.user;
+      naviget("/");
+  })
+  .catch(err=>{
+      setError(err.message)
+  })
+  };
+  const LoginWithgitHub = () => {
+   gitHubLogin()
+    .then(result =>{
+      const user = result.user;
+      naviget("/");
+  })
+  .catch(err=>{
+      setError(err.message)
+  })
+  };
   return (
     <div className="hero min-h-screen bg-base-200 pt-20">
       <div className="hero-content flex-col lg:flex-row gap-5">
@@ -51,28 +82,13 @@ const SignUp = () => {
           <Lottie animationData={login} loop={true} />
         </div>
         <div className="w-full md:max-w-1/2 card flex-shrink-0  max-w-sm shadow-2xl bg-base-100 py-5">
-          {error && (
-            <div className="alert alert-error shadow-lg my-2">
-              <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-current flex-shrink-0 h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <h2>{error}</h2>
-              </div>
-            </div>
-          )}
           <form onSubmit={handelSignUp} className="w-4/5 mx-auto relative">
             <h3 className="text-center text-2xl font-semibold">Sign Up</h3>
+            {error && (
+          <div className="my-2 border p-2 rounded border-rose-700">
+              <h2 className="text-rose-700">{error}</h2>
+          </div>
+        )}
             <div className="form-control">
               <label className="label">
                 <span className="">Name</span>

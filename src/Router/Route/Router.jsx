@@ -9,6 +9,7 @@ import Blogs from "../../Pages/Home/Blogs/Blogs";
 import Contact from "../../Pages/Home/Contact/Contact";
 import Login from "../../Pages/Auth/Login/Login";
 import SignUp from "../../Pages/Auth/SignUp/SignUp";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
         },
         {
           path:'/myToy',
-          element:<MyToys></MyToys>
+          element:<PrivetRoute><MyToys></MyToys></PrivetRoute> 
         },
         {
           path:'/addToy',
-          element:<AddToy></AddToy>
+          element:<PrivetRoute><AddToy></AddToy></PrivetRoute> 
         },
         {
           path:'//blogs',

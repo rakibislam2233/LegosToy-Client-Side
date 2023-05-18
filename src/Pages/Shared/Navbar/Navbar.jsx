@@ -1,16 +1,25 @@
 
 import { Link, NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-// import { FaUserTie } from "react-icons/fa";
-// import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
+import { FaUserTie } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
+    const {user,logOut} = useContext(UserContext)
+    console.log(user);
+    const handelLogout = ()=>{
+      logOut()
+      .then()
+      .catch(err =>{
+        console.log(err.message);
+      })
+    }
     return (
-        <nav className="w-full fixed z-50 py-5 h-20 px-5">
+        <nav className="w-full fixed z-50 bg-white py-5 h-20 px-5">
         <div className="max-w-6xl mx-auto  flex justify-between items-center font-bodyFont">
           <div>
             <Link to={"/"}>
@@ -21,7 +30,7 @@ const Navbar = () => {
             </Link>
           </div>
           <ul
-            className={`w-[75%] h-[100vh] md:w-auto md:h-auto bg-[#212428] md:bg-transparent text-center text-[#02214D] font-semibold  duration-500 md:duration-0  flex flex-col md:flex-row gap-5 absolute md:static  items-center ${
+            className={`w-[75%] h-[100vh] md:w-auto md:h-auto bg-white md:bg-transparent text-center text-[#02214D] font-semibold  duration-500 md:duration-0  flex flex-col md:flex-row gap-5 absolute md:static  items-center ${
               show ? "top-[80px] space-y-1 left-0 " : "top-[80px]  left-[-700px]"
             }`}
           >
@@ -37,7 +46,9 @@ const Navbar = () => {
             >
              All Toys
             </NavLink>
-            <NavLink
+            {
+              user && <>
+              <NavLink
               to={"/myToy"}
               className={({ isActive }) => (isActive ? "text-[#742BFD]" : "")}
             >
@@ -49,6 +60,8 @@ const Navbar = () => {
             >
               Add Toy
             </NavLink>
+              </>
+            }
             <NavLink
               to={"/blogs"}
               className={({ isActive }) => (isActive ? "text-[#742BFD]" : "")}
@@ -67,7 +80,7 @@ const Navbar = () => {
             >
               Sign up
             </NavLink>
-            {/* { user ? (
+            { user ? (
               <>
                 {user.photoURL ? (
                   <img
@@ -87,19 +100,19 @@ const Navbar = () => {
                   ></FaUserTie>
                 )}
                 <button
-                //   onClick={handelLogout}
-                  className="py-2 px-5 bg-[#742BFD] rounded-full"
+                  onClick={handelLogout}
+                  className="py-2 px-5 bg-[#742BFD] rounded-full text-white"
                 >
                   Log out
                 </button>
               </>
             ) : (
               <Link to={"/login"}>
-                <button className="py-2 px-5 bg-[#742BFD] rounded-full">
+                <button className="py-2 px-5 bg-[#742BFD] text-white rounded-full">
                   Login
                 </button>
               </Link>
-            )} */}
+            )}
             <Tooltip id="my-tooltip" />
           </ul>
           <>
