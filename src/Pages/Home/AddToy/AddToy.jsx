@@ -44,7 +44,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("toyName", { required: true })}
+                      {...register("toyName")}
+                      required
                       placeholder="Enter Toy Name"
                     />
                   </div>
@@ -54,7 +55,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("seller", { required: true })}
+                      {...register("seller")}
+                      required
                       placeholder="Enter Seller Name"
                       defaultValue={user?.displayName}
                       type="text"
@@ -68,7 +70,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("SellerEmail", { required: true })}
+                      {...register("sellerEmail")}
+                      required
                       placeholder="Enter Seller Email"
                       type="email"
                       defaultValue={user?.email}
@@ -81,7 +84,7 @@ const AddToy = () => {
                     </label>
                     <select
                       className="text-input py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("category", { required: true })}
+                      {...register("category")}
                     >
                       <option value="lego-city">lego City</option>
                       <option value="lego-car">lego Car</option>
@@ -99,9 +102,11 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("price", { required: true })}
+                      {...register("price")}
+                      required
                       placeholder="Enter Toy Price"
                       type="number"
+                      min='100'
                     />
                   </div>
                   <div className="form-control w-full">
@@ -110,9 +115,12 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("rating", { required: true })}
+                      {...register("rating")}
+                      required
                       placeholder="Enter Rating"
                       type="text"
+                      min='1'
+                      max='5'
                     />
                   </div>
                 </div>
@@ -123,7 +131,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("image", { required: true })}
+                      {...register("image")}
+                      required
                       placeholder="Enter Toy Phot Url"
                       type="url"
                       defaultValue="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -135,7 +144,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="text-input py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("quantity", { required: true })}
+                      {...register("quantity")}
+                      required
                       placeholder="Enter Available Quantity"
                       type="number"
                     />
@@ -148,7 +158,8 @@ const AddToy = () => {
                     </label>
                     <input
                       className="pb-8 py-2  focus:outline-none border  px-3 rounded "
-                      {...register("description", { required: true })}
+                      {...register("description")}
+                      required
                       placeholder="Enter Toy Description"
                       type="text"
                     />
