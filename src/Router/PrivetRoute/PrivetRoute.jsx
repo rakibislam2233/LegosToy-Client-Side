@@ -5,13 +5,13 @@ import { Navigate } from 'react-router-dom';
 const PrivetRoute = ({children}) => {
   const {user,loading} = useContext(UserContext)
   if(loading){
-    return <div>loading........</div>
+    return <div className="w-full h-[100vh] bg-[#212428] flex justify-center items-center"></div>
   }
   if(user){
     return children
   }
   return (
-    <Navigate>
+    <Navigate  to={"/login"} state={{ from: location }}>
       
     </Navigate>
   );

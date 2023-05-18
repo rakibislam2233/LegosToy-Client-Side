@@ -3,20 +3,21 @@ import LoginLotti from "../../../assets/Lotti/Login.json";
 import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import Swal from 'sweetalert2'
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const {login,googleLogin,gitHubLogin} = useContext(UserContext)
-  const naviget = useNavigate()
+  const location = useLocation();
+const naviget = useNavigate();
+const from = location?.state?.from.pathname || "/";
   const handelSingIn = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
     setError("");
-    console.log(email, password);
     if (email == "") {
       return setError("Please enter your email");
     } else if (password.length == 0) {
@@ -33,8 +34,7 @@ const Login = () => {
         timer: 1500
       })
       setError("");
-      naviget('/')
-      // naviget(from, { replace: true });
+      naviget(from, { replace: true });
       form.reset();
     })
     .catch((err) => {
@@ -46,7 +46,7 @@ const Login = () => {
     googleLogin()
     .then(result =>{
       const user = result.user;
-      naviget("/");
+      naviget(from, { replace: true })
   })
   .catch(err=>{
       setError(err.message)
@@ -56,7 +56,7 @@ const Login = () => {
    gitHubLogin()
     .then(result =>{
       const user = result.user;
-      naviget("/");
+      naviget(from, { replace: true })
   })
   .catch(err=>{
       setError(err.message)
