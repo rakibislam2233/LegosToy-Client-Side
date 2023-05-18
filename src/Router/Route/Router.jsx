@@ -10,6 +10,7 @@ import Contact from "../../Pages/Home/Contact/Contact";
 import Login from "../../Pages/Auth/Login/Login";
 import SignUp from "../../Pages/Auth/SignUp/SignUp";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import SingleToy from "../../Pages/Home/SingleToy/SingleToy";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         {
           path:'/allToy',
           element:<AllToys></AllToys>
+        },
+        {
+          path:'/singleToy/:id',
+          element:<PrivetRoute><SingleToy></SingleToy></PrivetRoute>,
+          loader:({params})=> fetch(`http://localhost:5000/singleToy/${params.id}`)
         },
         {
           path:'/myToy',

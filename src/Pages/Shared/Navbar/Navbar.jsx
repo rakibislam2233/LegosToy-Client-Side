@@ -31,7 +31,7 @@ const Navbar = () => {
             </Link>
           </div>
           <ul
-            className={`w-[75%] h-[100vh] md:w-auto md:h-auto bg-white md:bg-transparent text-center text-[#02214D] font-semibold  duration-500 md:duration-0  flex flex-col md:flex-row gap-5 absolute md:static  items-center ${
+            className={`w-[75%] h-[100vh] lg:w-auto lg:h-auto bg-white lg:bg-transparent text-center text-[#02214D] font-semibold  duration-500 lg:duration-0  flex flex-col lg:flex-row gap-5 absolute lg:static  items-center ${
               show ? "top-[80px] space-y-1 left-0 " : "top-[80px]  left-[-700px]"
             }`}
           >
@@ -102,14 +102,14 @@ const Navbar = () => {
                 )}
                 <button
                   onClick={handelLogout}
-                  className="py-2 px-5 bg-[#742BFD] rounded-full text-white"
+                  className="py-2 px-5 bg-[#024E92] rounded-full text-white"
                 >
                   Log out
                 </button>
               </>
             ) : (
               <Link to={"/login"}>
-                <button className="py-2 px-5 bg-[#742BFD] text-white rounded-full">
+                <button className="py-2 px-5 bg-[#024E92] text-white rounded-full">
                   Login
                 </button>
               </Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
           </ul>
           <>
             <button
-              className="md:hidden duration-500"
+              className="lg:hidden duration-500"
               onClick={() => setShow(!show)}
             >
               {show ? (

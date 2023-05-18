@@ -1,12 +1,12 @@
 import Banner from "../Banner/Banner";
-import Gallery from "../Gallary/Gallery";
+import Gallerys from "../Gallary/Gallarys";
 import Shope from "../Shope/Shope";
 
 const Home = () => {
     return (
        <>
        <Banner></Banner>
-       <Gallery></Gallery>
+       <Gallerys></Gallerys>
        <Shope></Shope>
        </>
     );

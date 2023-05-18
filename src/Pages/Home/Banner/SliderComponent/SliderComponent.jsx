@@ -12,7 +12,7 @@ const SliderComponent = ({images}) => {
               backgroundBlendMode:"multiply"
             
             }}
-            className={`bg-gray-900 bg-opacity-30 w-full h-screen`}
+            className={`bg-gray-900 bg-opacity-30 w-full h-screen cursor-pointer`}
           >
              {/* <div className="w-full max-w-6xl mx-auto h-full flex items-center p-5">
           <div className="space-y-4">
