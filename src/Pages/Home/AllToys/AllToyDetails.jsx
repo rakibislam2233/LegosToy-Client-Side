@@ -8,16 +8,16 @@ const AllToyDetails = ({singletoy}) => {
       <figure>
         <img
           src={image}
-          alt="Shoes"
         />
       </figure>
       <div className="card-body">
         <h2 className="text-2xl font-semibold">{toyName}</h2>
+        <p className="font-semibold">Seller: {seller}</p>
+        <p className="font-semibold">Sub-category: {category}</p>
         <p className="font-semibold">Price: ${price}</p>
         <p className="font-semibold">Available Quantity: {quantity}</p>
-        <p className="font-semibold">Seller: {seller}</p>
         <div className="card-actions">
-          <Link className="w-full" to={`/singleToy/${_id}`}><button className="w-full btn bg-[#024E92] border-none ">View Details</button></Link>
+          <Link className="w-full" to={`/singleToy/${_id}`}><button className="w-full py-2 px-5 rounded-full text-white font-semibold bg-[#024E92] border-none ">View Details</button></Link>
         </div>
       </div>
     </div>
