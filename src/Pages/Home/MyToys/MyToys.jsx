@@ -84,7 +84,7 @@ const MyToys = () => {
                       <label
                         onClick={() => handleSingleData(data._id)}
                         htmlFor="my-modal-6"
-                        className="py-1 px-6 rounded-full bg-[#024E92] text-white cursor-pointer"
+                        className="py-1 px-8 rounded-full bg-[#024E92] text-white cursor-pointer"
                       >
                         Edit
                       </label>

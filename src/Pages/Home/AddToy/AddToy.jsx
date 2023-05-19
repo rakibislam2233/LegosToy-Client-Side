@@ -31,7 +31,7 @@ const AddToy = () => {
       });
   };
   return (
-    <div className="hero min-h-screen bg-base-200 pt-20">
+    <div className="hero min-h-screen bg-base-200 pt-20 p-5">
        <div className="card  w-full max-w-6xl mx-auto shadow-2xl bg-base-100 my-5">
             <div className="card-body">
               <h3 className="text-center text-3xl font-semibold">Add Your Toy</h3>

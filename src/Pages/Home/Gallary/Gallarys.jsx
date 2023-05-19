@@ -1,7 +1,9 @@
 import React from "react";
 import Gallery from "react-photo-gallery";
 const Gallerys = () => {
+ 
   const photos = [
+
     {
       src: 'https://i.postimg.cc/L6TmTD35/legoSet4.jpg',
       width: 4,
@@ -70,14 +72,28 @@ const Gallerys = () => {
     }
   ];
   return (
-    <div className="w-full py-5">
-      <h3 className="text-4xl text-center font-semibold py-5 ">
-        Our Gallery
-      </h3>
-      <div className="w-full max-w-6xl mx-auto">
-      <Gallery photos={photos} />;
+    <>
+      <div className="w-full py-5">
+        <h3 className="text-4xl text-center font-semibold py-5 ">
+          Our Gallery
+        </h3>
+        <div className="w-full max-w-6xl mx-auto">
+          <Gallery photos={photos} />;
+        </div>
       </div>
-    </div>
+    </>
+    // <>
+    //       {/* <div>
+    //     <Gallery photos={photos} onClick={this.openLightbox} />
+    //     <Lightbox images={photos}
+    //       onClose={this.closeLightbox}
+    //       onClickPrev={this.gotoPrevious}
+    //       onClickNext={this.gotoNext}
+    //       currentImage={this.state.currentImage}
+    //       isOpen={this.state.lightboxIsOpen}
+    //     />
+    //   </div> */}
+    // </>
   );
 };
 
