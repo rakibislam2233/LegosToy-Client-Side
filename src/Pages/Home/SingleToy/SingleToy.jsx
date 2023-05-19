@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 const SingleToy = () => {
   const toy = useLoaderData();
   const {
@@ -34,7 +35,10 @@ const SingleToy = () => {
             <p>Seller email: {sellerEmail}</p>
             <p>Sub category: {category}</p>
             <p>Price: ${price}</p>
-            <p>Rating: {rating}</p>
+            <p className="flex  items-center">
+              Rating:{" "}
+              <Rating style={{ maxWidth: 100 }} readOnly value={rating} />
+            </p>
             <p>Available Quantity: {quantity}</p>
             <p className="">Description: {description}</p>
           </div>

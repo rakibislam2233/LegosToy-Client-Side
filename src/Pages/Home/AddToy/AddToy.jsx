@@ -33,7 +33,7 @@ const AddToy = () => {
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 p-5">
       <div
-        data-aos="zoom-in-up"
+        data-aos="fade-up"
         data-aos-duration="2000"
         className="card  w-full max-w-6xl mx-auto shadow-2xl bg-base-100 my-5"
       >

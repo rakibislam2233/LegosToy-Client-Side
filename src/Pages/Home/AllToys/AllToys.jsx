@@ -1,8 +1,10 @@
+import { key } from "localforage";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const AllToys = () => {
   const [toy, setToy] = useState();
+  const [error, setError] = useState();
   const [search, SetSearch] = useState();
   useEffect(() => {
     fetch(`http://localhost:5000/allToy`)
@@ -14,8 +16,9 @@ const AllToys = () => {
     SetSearch(value);
   };
   const searchToyName = () => {
+    setError('')
     if (search === undefined) {
-      return;
+      return setError('Please Enter value');
     }
     fetch(`http://localhost:5000/searchByToyName/${search}`)
       .then((res) => res.json())
@@ -23,17 +26,18 @@ const AllToys = () => {
         setToy(data);
       });
   };
-  console.log(toy);
   return (
     <div className="w-full pt-20 p-5">
       <h3 className="text-4xl text-center font-semibold ">All Toys</h3>
-      <div className="flex justify-center py-10 gap-2 ">
+      <div className=" py-10 ">
+        <div className="flex justify-center gap-2">
         <input
           onChange={handleSearch}
           className="w-full max-w-md border py-2 border-gray-700 px-8 rounded-full "
           type="text"
           name=""
           placeholder="Search any Toy Name"
+          required
         />
         <button
           onClick={searchToyName}
@@ -41,7 +45,10 @@ const AllToys = () => {
         >
           Search
         </button>
+        </div>
+        <h2 className="ml-96 text-rose-700">{error}</h2>
       </div>
+      
       {toy?.length == 0 ? (
         <div className="w-full h-80 flex justify-center items-center">
           <h2 className="text-5xl font-semibold">No Data Availble</h2>
@@ -67,10 +74,10 @@ const AllToys = () => {
             </thead>
             <tbody>
               {toy &&
-                toy.map((data, index) => (
+                toy.map((data, index) =>  (
+                  
                   <>
-                    {" "}
-                    <tr>
+                    <tr key={index}>
                       <th>{index + 1}</th>
                       <th>{data.toyName}</th>
                       <th>{data.seller}</th>

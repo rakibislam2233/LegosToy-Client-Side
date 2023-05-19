@@ -46,7 +46,6 @@ const MyToys = () => {
       }
     });
   };
-  console.log(singelUpdateToy);
   return (
     <div>
         <div  className="w-full pt-20 p-5">
@@ -57,7 +56,7 @@ const MyToys = () => {
         </div>
       ) : (
         <div
-        data-aos="zoom-in-up"
+        data-aos="fade-up"
         data-aos-duration="2000"
           className="w-full overflow-x-auto p-5"
         >
