@@ -63,10 +63,8 @@ const MyToys = () => {
         <div className="w-full h-80 flex justify-center items-center">
           <h2 className="text-5xl font-semibold">No Data Availble</h2>
         </div>
-      ) :  loading ? <div className="w-full h-[90vh] flex justify-center items-center"><Lottie animationData={Spinner} loop={true} /></div> : 
+      ) :  loading ? <div className="w-full h-[490px] flex justify-center items-center"><Lottie animationData={Spinner} loop={true} /></div> : 
         <div
-        data-aos="fade-up"
-        data-aos-duration="2000"
           className="w-full overflow-x-auto p-5"
         >
           <table className="table table-zebra w-full">

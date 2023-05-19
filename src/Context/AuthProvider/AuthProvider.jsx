@@ -14,7 +14,7 @@ export const UserContext = createContext(null);
 import { GoogleAuthProvider } from "firebase/auth";
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading,setLoading] = useState(true);
     const Googleprovider = new GoogleAuthProvider();
     const Githubprovider = new GithubAuthProvider();
     const createNewUser = (email, password) => {

@@ -17,7 +17,7 @@ const SingleToy = () => {
   } = toy;
   return (
     <div>
-      <div className="w-full max-w-4xl mx-auto py-20 p-5">
+      <div className="w-full max-w-4xl mx-auto py-32 p-5">
         <div
           data-aos="zoom-in"
           className="card w-ful h-full bg-base-100 shadow-xl my-4"

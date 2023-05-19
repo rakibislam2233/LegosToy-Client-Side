@@ -3,12 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import Lottie from "lottie-react";
+import Spinner from "../../../assets/Lotti/loading.json";
 import "react-tabs/style/react-tabs.css";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 const Shope = () => {
   const { user } = useContext(UserContext);
   const [category, setCategory] = useState("lego-Car");
+  const [loading,setLoading] = useState(true);
   const [datas, setDatas] = useState();
   const naviget = useNavigate();
   const viewButton = (id) => {
@@ -30,13 +33,17 @@ const Shope = () => {
   useEffect(() => {
     fetch(`http://localhost:5000/getCategories/${category}`)
       .then((res) => res.json())
-      .then((data) => setDatas(data));
+      .then((data) => {
+        setDatas(data)
+        setLoading(false)
+      });
   }, [category]);
   console.log(datas);
   return (
     <div className="w-full max-w-6xl mx-auto py-5">
       <h3 className="text-4xl text-center font-semibold ">Our Shope</h3>
       {
+        loading ? <div className="w-full h-80 flex justify-center items-center"><Lottie animationData={Spinner} loop={true} /></div> :
         <Tabs className="">
           <TabList className="flex justify-center border-b">
             <Tab>
