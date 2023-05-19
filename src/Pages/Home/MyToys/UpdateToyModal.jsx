@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../Context/AuthProvider/AuthProvider';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2'
 const UpdateToyModal = ({singelUpdateToy}) => {
     const { user } = useContext(UserContext)
-    const {toyName,seller,quantity,price,image,category,sellerEmail,rating,description} = singelUpdateToy
+    const {_id,toyName,quantity,price,image,category,rating,description} = singelUpdateToy
   const {
     register,
     handleSubmit,
@@ -11,6 +12,25 @@ const UpdateToyModal = ({singelUpdateToy}) => {
   } = useForm();
   const onSubmit = (data) => {
     console.log(data);
+    return
+    fetch(`http://localhost:5000/updateToy/${_id}`,{
+      method:'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res =>res.json())
+    .then(data=>{
+      console.log(data);
+      if(data.modefiedCount>0){
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your Toy Updated Succesfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
   };
     return (
         <div>
@@ -160,7 +180,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                 <div className="form-control py-2">
                   <input
                     className="bg-[#024E92] text-white font-semibold py-2 my-2 rounded-full cursor-pointer"
-                    value="Add Toy"
+                    value="Update Toy"
                     type="submit"
                   />
                 </div>

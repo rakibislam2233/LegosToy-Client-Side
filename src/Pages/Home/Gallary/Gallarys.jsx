@@ -77,8 +77,9 @@ const Gallerys = () => {
         <h3 className="text-4xl text-center font-semibold py-5 ">
           Our Gallery
         </h3>
-        <div className="w-full max-w-6xl mx-auto">
-          <Gallery photos={photos} />;
+        <div data-aos="fade-up"
+        data-aos-duration="2000" className="w-full max-w-6xl mx-auto">
+          <Gallery  photos={photos} />;
         </div>
       </div>
     </>

@@ -21,12 +21,12 @@ const Navbar = () => {
     return (
         <nav className="w-full fixed z-50 bg-white py-5 h-20 px-5">
         <div className="max-w-6xl mx-auto  flex justify-between items-center font-bodyFont">
-          <div className="flex gap-2 items-center">
-            <img className="w-12 h-12 rounded-full" src='../../../../src/assets/images/logo/LegoToy.png' alt="" />
+          <div className="flex gap-2 items-center ">
+            <img className="w-12 h-12 rounded-full cursor-pointer" src='../../../../src/assets/images/logo/56647.jpg' alt="" />
             <Link to={"/"}>
               {" "}
               <h3 className="text-2xl cursor-pointer font-bold text-[#02214D]">
-                Legos<span className="text-[#742BFD]">Toy</span>
+              Lego<span className="text-[#742BFD]">Landmark</span>
               </h3>
             </Link>
           </div>
