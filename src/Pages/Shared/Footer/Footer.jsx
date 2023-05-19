@@ -8,8 +8,8 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-base-200 ">
-      <div className="w-full max-w-6xl mx-auto footer  py-10 bg-base-200 text-base-content px-5 md:px-0">
-        <div>
+      <div  className="w-full max-w-6xl mx-auto footer  py-10 bg-base-200 text-base-content px-5 md:px-0">
+        <div data-aos="zoom-out-right" data-aos-duration="3000">
           <img
             className="w-12 h-12 rounded-full cursor-pointer"
             src="../../../../src/assets/images/logo/56647.jpg"
@@ -29,7 +29,7 @@ const Footer = () => {
             <a href="https://www.linkedin.com/in/md-rakib-ali/"><BsLinkedin className="w-8 h-8 cursor-pointer"></BsLinkedin></a>
           </div>
         </div>
-        <div>
+        <div data-aos="fade-down-right" data-aos-duration="3000" >
           <span className="text-xl font-semibold">Services</span>
           <a className="link link-hover">Home</a>
           <a className="link link-hover">About</a>
@@ -37,14 +37,14 @@ const Footer = () => {
           <a className="link link-hover">Blogs</a>
           <a className="link link-hover">Contact</a>
         </div>
-        <div>
+        <div data-aos="fade-down-left" data-aos-duration="3000">
           <span className="text-xl font-semibold">Company</span>
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>
           <a className="link link-hover">Jobs</a>
           <a className="link link-hover">Press kit</a>
         </div>
-        <div>
+        <div data-aos="zoom-out-left" data-aos-duration="3000">
           <span className="text-xl font-semibold">Legal</span>
           <a className="link link-hover">Terms of use</a>
           <a className="link link-hover">Privacy policy</a>

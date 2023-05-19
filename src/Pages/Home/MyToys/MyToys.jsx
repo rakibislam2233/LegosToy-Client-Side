@@ -2,19 +2,28 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import UpdateToyModal from "./UpdateToyModal";
 import Swal from "sweetalert2";
+import Lottie from "lottie-react";
+import Spinner from "../../../assets/Lotti/loading.json";
 const MyToys = () => {
   const [myToy, setmyToy] = useState();
   const { user } = useContext(UserContext);
   const [singelUpdateToy, setsingelUpdateToy] = useState([]);
+  const [loading,setLoading] = useState(true);
   useEffect(() => {
     fetch(`http://localhost:5000/myToy/${user?.email}`)
       .then((res) => res.json())
-      .then((data) => setmyToy(data));
+      .then((data) =>{
+         setmyToy(data)
+         setLoading(false)
+        });
   }, [myToy]);
   const handleSingleData = (id) => {
     fetch(`http://localhost:5000/singleToy/${id}`)
       .then((res) => res.json())
-      .then((data) => setsingelUpdateToy(data));
+      .then((data) =>{ 
+        setsingelUpdateToy(data)
+        setLoading(false)
+      });
   };
   const handleRemoveToy = (id) => {
     Swal.fire({
@@ -54,7 +63,7 @@ const MyToys = () => {
         <div className="w-full h-80 flex justify-center items-center">
           <h2 className="text-5xl font-semibold">No Data Availble</h2>
         </div>
-      ) : (
+      ) :  loading ? <div className="w-full h-[90vh] flex justify-center items-center"><Lottie animationData={Spinner} loop={true} /></div> : 
         <div
         data-aos="fade-up"
         data-aos-duration="2000"
@@ -111,7 +120,7 @@ const MyToys = () => {
             </tbody>
           </table>
         </div>
-      )}
+      }
 
       {<UpdateToyModal  setmyToy={setmyToy} myToy={myToy} singelUpdateToy={singelUpdateToy}></UpdateToyModal>}
         </div>
