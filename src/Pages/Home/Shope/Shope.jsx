@@ -41,7 +41,7 @@ const Shope = () => {
   console.log(datas);
   return (
     <div className="w-full max-w-6xl mx-auto py-5">
-      <h3 className="text-4xl text-center font-semibold ">Our Shope</h3>
+      <h3 className="text-4xl text-center font-semibold py-5 ">Our Shope</h3>
       {
         loading ? <div className="w-full h-80 flex justify-center items-center"><Lottie animationData={Spinner} loop={true} /></div> :
         <Tabs className="">
@@ -208,6 +208,9 @@ const Shope = () => {
           </TabPanel>
         </Tabs>
       }
+       <div className="w-full h-full">
+        <img data-aos="zoom-in" data-aos-duration="3000"  className="w-full h-full rounded-xl" src="https://i.postimg.cc/G23h7Ph1/images.jpg" alt="" />
+       </div>
     </div>
   );
 };

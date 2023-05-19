@@ -8,7 +8,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-base-200 ">
-      <div  className="w-full max-w-6xl mx-auto footer  py-10 bg-base-200 text-base-content px-5 md:px-0">
+      <div className="w-full max-w-6xl mx-auto footer  py-10 bg-base-200 text-base-content px-5 md:px-0">
         <div data-aos="zoom-out-right" data-aos-duration="3000">
           <img
             className="w-12 h-12 rounded-full cursor-pointer"
@@ -16,7 +16,10 @@ const Footer = () => {
             alt=""
           />
           <p className="text-2xl font-semibold">LegoLandmark</p>
-          <p className="font-semibold">Providing reliable tech since 1992</p>
+          <p className="font-semibold">
+            We perform baby and toddler photoshoots on special <br /> occasions, events
+            and/or with our toys upon parents’ requests.
+          </p>
           <div className="flex gap-4">
             <a href="https://www.facebook.com/all.rakib.39" target="_blank">
               <BsFacebook className="w-8 h-8 cursor-pointer"></BsFacebook>
@@ -24,12 +27,19 @@ const Footer = () => {
             <BsGoogle className="w-8 h-8 cursor-pointer"></BsGoogle>
             <a href="https://github.com/rakibislam2233" target="_blank">
               <BsGithub className="w-8 h-8 cursor-pointer"></BsGithub>
-            </a>   
-            <a href="https://www.instagram.com/r_a_k_i_b_a_l_i/" target="_blank"><BsInstagram className="w-8 h-8 cursor-pointer"></BsInstagram></a>
-            <a href="https://www.linkedin.com/in/md-rakib-ali/"><BsLinkedin className="w-8 h-8 cursor-pointer"></BsLinkedin></a>
+            </a>
+            <a
+              href="https://www.instagram.com/r_a_k_i_b_a_l_i/"
+              target="_blank"
+            >
+              <BsInstagram className="w-8 h-8 cursor-pointer"></BsInstagram>
+            </a>
+            <a href="https://www.linkedin.com/in/md-rakib-ali/">
+              <BsLinkedin className="w-8 h-8 cursor-pointer"></BsLinkedin>
+            </a>
           </div>
         </div>
-        <div data-aos="fade-down-right" data-aos-duration="3000" >
+        <div data-aos="fade-down-right" data-aos-duration="3000">
           <span className="text-xl font-semibold">Services</span>
           <a className="link link-hover">Home</a>
           <a className="link link-hover">About</a>
@@ -51,10 +61,11 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
           <div className="relative w-full">
             <input
-              className="py-2 px-5 w-full rounded-full border border-gray-800"
+              className="py-2 px-2 w-52 rounded-full border border-gray-800"
               type="email"
               name="email"
               id=""
+              placeholder="Enter your email"
             />
             <button className="bg-[#024E92] py-[9px] px-3 rounded-full text-white absolute right-0">
               Subscribe
