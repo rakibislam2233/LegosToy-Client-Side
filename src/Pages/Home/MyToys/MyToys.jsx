@@ -10,7 +10,7 @@ const MyToys = () => {
     fetch(`http://localhost:5000/myToy/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setmyToy(data));
-  }, []);
+  }, [myToy]);
   const handleSingleData = (id) => {
     fetch(`http://localhost:5000/singleToy/${id}`)
       .then((res) => res.json())
@@ -113,7 +113,7 @@ const MyToys = () => {
         </div>
       )}
 
-      {<UpdateToyModal singelUpdateToy={singelUpdateToy}></UpdateToyModal>}
+      {<UpdateToyModal  setmyToy={setmyToy} myToy={myToy} singelUpdateToy={singelUpdateToy}></UpdateToyModal>}
         </div>
     
     </div>

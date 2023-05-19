@@ -74,7 +74,7 @@ const Shope = () => {
               <div  className="w-full grid md:grid-cols-2 p-5 gap-5">
                 {datas?.map((data) => (
                   <>
-                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
+                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border md:flex justify-between rounded-2xl">
                       <div className="md:w-1/2 ">
                         <img
                           className="w-full rounded-2xl  h-72 cursor-pointer"
@@ -119,7 +119,7 @@ const Shope = () => {
               <div className="w-full grid md:grid-cols-2 p-5 gap-5">
                 {datas?.map((data) => (
                   <>
-                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
+                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border md:flex justify-between rounded-2xl">
                       <div className="md:w-1/2 ">
                         <img
                           className="w-full rounded-2xl  h-72 cursor-pointer"

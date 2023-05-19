@@ -81,7 +81,7 @@ const SignUp = () => {
         <div className="w-full md:max-w-1/2 text-center lg:text-left">
           <Lottie animationData={login} loop={true} />
         </div>
-        <div className="w-full md:max-w-1/2 card flex-shrink-0  max-w-sm shadow-2xl bg-base-100 py-5">
+        <div className="w-full md:max-w-1/2 card flex-shrink-0  max-w-sm  bg-base-100 py-5">
           <form onSubmit={handelSignUp} className="w-4/5 mx-auto relative">
             <h3 className="text-center text-2xl font-semibold">Sign Up</h3>
             {error && (

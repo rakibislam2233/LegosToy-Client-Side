@@ -1,18 +1,25 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../../Context/AuthProvider/AuthProvider';
-import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
-const UpdateToyModal = ({singelUpdateToy}) => {
+const UpdateToyModal = ({singelUpdateToy,setmyToy,myToy}) => {
     const { user } = useContext(UserContext)
     const {_id,toyName,quantity,price,image,category,rating,description} = singelUpdateToy
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-    return
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const toyName = form.toyName.value;
+    const quantity = form.quantity.value;
+    const price = form.price.value;
+    const image = form.image.value;
+    const category = form.category.value;
+    const rating = form.rating.value;
+    const description = form.description.value;
+    const seller = form.seller.value;
+    const sellerEmail = form.sellerEmail.value;
+    const data={
+      toyName,seller,sellerEmail,quantity,price,image,category,rating,description
+    }
     fetch(`http://localhost:5000/updateToy/${_id}`,{
       method:'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -21,7 +28,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
     .then(res =>res.json())
     .then(data=>{
       console.log(data);
-      if(data.modefiedCount>0){
+      if(data.modifiedCount>0){
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -29,6 +36,19 @@ const UpdateToyModal = ({singelUpdateToy}) => {
           showConfirmButton: false,
           timer: 1500
         })
+        const remaining = myToy.filter(toy=> toy._id !==_id);
+        console.log(remaining);
+        const updateToy = myToy.find(toy=>toy._id===_id);
+        console.log(updateToy);
+        const newToy = [updateToy,...remaining]
+        setmyToy(newToy)
+      }else{
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Please Update Anythings...",
+          footer: '<a href="">Why do I have this issue?</a>',
+        });
       }
     })
   };
@@ -41,20 +61,17 @@ const UpdateToyModal = ({singelUpdateToy}) => {
             <div className="card  w-full  shadow-2xl bg-base-100">
               <div className="card-body">
                 <h3 className="text-center text-3xl font-semibold">Update Your Toy</h3>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                {errors.exampleRequired && <span>This field is required</span>}
+                <form onSubmit={handleSubmit}>
                 <div className="md:flex justify-between gap-4">
                   <div className="form-control w-full">
                     <label className="label">
                       <span className="font-semibold">Toy Name</span>
                     </label>
                     <input
-                      className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("toyName")}
-                      required
+                      className="py-1 focus:outline-none border  px-3 rounded-full "
+                      name='toyName'
                       placeholder="Enter Toy Name"
                       defaultValue={toyName}
-                      value={toyName}
                     />
                   </div>
                   <div className="form-control w-full">
@@ -63,7 +80,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("seller")}
+                      name='seller'
                       required
                       placeholder="Enter Seller Name"
                       defaultValue={user?.displayName}
@@ -80,12 +97,12 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("sellerEmail")}
+                      name='sellerEmail'
                       required
                       placeholder="Enter Seller Email"
                       type="email"
                       defaultValue={user?.email}
-                      readOnly
+                      
                     />
                   </div>
                   <div className="form-control w-full">
@@ -94,7 +111,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <select
                       className="text-input py-1   focus:outline-none border  px-3 rounded-full "
-                      {...register("category")}
+                      name='category'
                       defaultValue={category}
                     >
                       <option value="lego-city">lego City</option>
@@ -113,7 +130,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("price")}
+                      name='price'
                       required
                       placeholder="Enter Toy Price"
                       type="number"
@@ -127,7 +144,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("rating")}
+                      name='rating'
                       required
                       placeholder="Enter Rating"
                       type="text"
@@ -144,7 +161,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("image")}
+                      name='image'
                       required
                       placeholder="Enter Toy Phot Url"
                       type="url"
@@ -157,7 +174,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <input
                       className="text-input py-1  focus:outline-none border  px-3 rounded-full "
-                      {...register("quantity")}
+                      name='quantity'
                       required
                       placeholder="Enter Available Quantity"
                       type="number"
@@ -172,7 +189,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                     </label>
                     <textarea
                       className="pb-8 py-2  focus:outline-none border  px-3 rounded "
-                      {...register("description")}
+                     name='description'
                       required
                       placeholder="Enter Toy Description"
                       type="text"
