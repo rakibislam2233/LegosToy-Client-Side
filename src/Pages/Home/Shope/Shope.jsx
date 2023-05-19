@@ -71,13 +71,13 @@ const Shope = () => {
                 <h2 className="text-5xl font-semibold">No Data Availble</h2>
               </div>
             ) : (
-              <div className="w-full grid md:grid-cols-2 p-5 gap-5 my-4">
+              <div  className="w-full grid md:grid-cols-2 p-5 gap-5">
                 {datas?.map((data) => (
                   <>
-                    <div className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
+                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
                       <div className="md:w-1/2 ">
                         <img
-                          className="w-full rounded-2xl  h-full cursor-pointer"
+                          className="w-full rounded-2xl  h-72 cursor-pointer"
                           src={data.image}
                           alt="Shoes"
                         />
@@ -116,13 +116,13 @@ const Shope = () => {
                 <h2 className="text-5xl font-semibold">No Data Availble</h2>
               </div>
             ) : (
-              <div className="w-full grid md:grid-cols-2 p-5 gap-5 my-4">
+              <div className="w-full grid md:grid-cols-2 p-5 gap-5">
                 {datas?.map((data) => (
                   <>
-                    <div className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
+                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
                       <div className="md:w-1/2 ">
                         <img
-                          className="w-full rounded-2xl  h-full cursor-pointer"
+                          className="w-full rounded-2xl  h-72 cursor-pointer"
                           src={data.image}
                           alt="Shoes"
                         />
@@ -161,13 +161,13 @@ const Shope = () => {
                 <h2 className="text-5xl font-semibold">No Data Availble</h2>
               </div>
             ) : (
-              <div className="w-full grid md:grid-cols-2 p-5 gap-5 my-4">
+              <div className="w-full grid md:grid-cols-2 p-5 gap-5">
                 {datas?.map((data) => (
                   <>
-                    <div data-aos="zoom-out" className="w-full h-full bg-base-100  border flex justify-between rounded-2xl">
+                    <div data-aos="zoom-in" className="w-full h-full bg-base-100  border md:flex justify-between rounded-2xl">
                       <div className="md:w-1/2 ">
                         <img
-                          className="w-full rounded-2xl  h-full cursor-pointer"
+                          className="w-full rounded-2xl  h-72 cursor-pointer"
                           src={data.image}
                           alt="Shoes"
                         />

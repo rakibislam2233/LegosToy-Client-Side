@@ -54,6 +54,7 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                       required
                       placeholder="Enter Toy Name"
                       defaultValue={toyName}
+                      value={toyName}
                     />
                   </div>
                   <div className="form-control w-full">
@@ -66,7 +67,9 @@ const UpdateToyModal = ({singelUpdateToy}) => {
                       required
                       placeholder="Enter Seller Name"
                       defaultValue={user?.displayName}
+                      value={user?.displayName}
                       type="text"
+                      
                     />
                   </div>
                 </div>
