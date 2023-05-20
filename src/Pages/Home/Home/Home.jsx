@@ -6,6 +6,7 @@ import Gallerys from "../Gallary/Gallarys";
 import Shope from "../Shope/Shope";
 import Testimonial from "../Testimonial/Testimonial";
 import WhatIDo from "../WhatIDo/WhatIDo";
+import Fetures from "../Fetures/Fetures";
 
 const Home = () => {
     useEffect(() => {
@@ -17,6 +18,7 @@ const Home = () => {
        <About></About>
        <Gallerys></Gallerys>
        <Shope></Shope>
+       <Fetures></Fetures>
        <WhatIDo></WhatIDo>
        <Testimonial></Testimonial>
        <Contact></Contact>

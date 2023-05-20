@@ -12,26 +12,7 @@ import toy8 from "../../../assets/Lotti/rakib4.json";
 const About = () => {
   return (
     <>
-      <div className="w-full max-w-6xl mx-auto  py-10">
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold">About</h2>
-          <h2 className="text-4xl font-bold">We make your children</h2>
-          <h2 className="text-4xl font-bold">happier with the best toys</h2>
-        </div>
-        <Marquee>
-          <div className="w-full flex gap-2 py-5">
-            <Lottie className="h-52" animationData={toy1} loop={true} />
-            <Lottie className="h-52" animationData={toy2} loop={true} />
-            <Lottie className="h-52" animationData={toy3} loop={true} />
-            <Lottie className="h-52" animationData={toy4} loop={true} />
-            <Lottie className="h-52" animationData={toy5} loop={true} />
-            <Lottie className="h-52" animationData={toy6} loop={true} />
-            <Lottie className="h-52" animationData={toy7} loop={true} />
-            <Lottie className="h-52" animationData={toy8} loop={true} />
-          </div>
-        </Marquee>
-      </div>
-      <div className="hero">
+      <div className="hero py-10">
         <div className="hero-content flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-1/2">
             <img
@@ -44,8 +25,9 @@ const About = () => {
           <div
             data-aos="zoom-in"
             data-aos-duration="3000"
-            className="w-full lg:w-1/2"
+            className="w-full lg:w-1/2 space-y-3"
           >
+            <h2 className="text-2xl font-semibold">About</h2>
             <h1 className="text-5xl font-bold">
               We provide & offer premium service
             </h1>
@@ -61,6 +43,20 @@ const About = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="w-full max-w-6xl mx-auto  py-10">
+        <Marquee>
+          <div className="w-full flex gap-2 py-5">
+            <Lottie className="h-52" animationData={toy1} loop={true} />
+            <Lottie className="h-52" animationData={toy2} loop={true} />
+            <Lottie className="h-52" animationData={toy3} loop={true} />
+            <Lottie className="h-52" animationData={toy4} loop={true} />
+            <Lottie className="h-52" animationData={toy5} loop={true} />
+            <Lottie className="h-52" animationData={toy6} loop={true} />
+            <Lottie className="h-52" animationData={toy7} loop={true} />
+            <Lottie className="h-52" animationData={toy8} loop={true} />
+          </div>
+        </Marquee>
       </div>
     </>
   );

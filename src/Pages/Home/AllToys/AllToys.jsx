@@ -84,10 +84,10 @@ const AllToys = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="2000"
-            className="w-full overflow-x-auto p-5"
+            className="w-full overflow-x-auto"
           >
             <div>
-            <select onChange={handelChange} className="px-5 py-1 border rounded" name="" id="">
+            <select onChange={handelChange} className="px-5 py-1 border-2 border-gray-800 rounded" name="" id="">
               <option value="20">Show  by default results</option>
               <option value="5">5</option>
               <option value="10">10</option>

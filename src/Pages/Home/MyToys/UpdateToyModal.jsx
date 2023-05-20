@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../Context/AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
-const UpdateToyModal = ({singelUpdateToy,setmyToy,myToy}) => {
+const UpdateToyModal = ({singelUpdateToy,setControl,control}) => {
     const { user } = useContext(UserContext)
     const {_id,toyName,quantity,price,image,category,rating,description} = singelUpdateToy
 
@@ -36,12 +36,7 @@ const UpdateToyModal = ({singelUpdateToy,setmyToy,myToy}) => {
           showConfirmButton: false,
           timer: 1500
         })
-        const remaining = myToy.filter(toy=> toy._id !==_id);
-        console.log(remaining);
-        const updateToy = myToy.find(toy=>toy._id===_id);
-        console.log(updateToy);
-        const newToy = [updateToy,...remaining]
-        setmyToy(newToy)
+        setControl(!control)
       }else{
         Swal.fire({
           icon: "error",

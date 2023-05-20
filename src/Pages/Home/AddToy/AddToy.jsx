@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 const AddToy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const { user } = useContext(UserContext);
   const {
     register,

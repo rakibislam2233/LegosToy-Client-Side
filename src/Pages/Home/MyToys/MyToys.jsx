@@ -9,14 +9,18 @@ const MyToys = () => {
   const { user } = useContext(UserContext);
   const [singelUpdateToy, setsingelUpdateToy] = useState([]);
   const [loading,setLoading] = useState(true);
+  const [control,setControl] = useState(false)
+  const [sort,setsort] = useState(1)
   useEffect(() => {
-    fetch(`https://legos-toy-server-side.vercel.app/myToy/${user?.email}`)
+    // fetch(`https://legos-toy-server-side.vercel.app/myToy/${user?.email}`)
+    // fetch(`https://legos-toy-server-side.vercel.app/myToyemailSort/?email=${user?.email}&&%20sort=${sort}`)
+    fetch(`http://localhost:5000/myToyemailSort/?email=${user?.email}&&%20sort=${sort}`)
       .then((res) => res.json())
       .then((data) =>{
          setmyToy(data)
          setLoading(false)
         });
-  }, [myToy]);
+  },[control,sort]);
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -58,6 +62,11 @@ const MyToys = () => {
       }
     });
   };
+  const handelChange = (e) => {
+    const value = e.target.value;
+    setsort(value);
+  }
+  console.log(sort);
   return (
     <div>
         <div  className="w-full pt-20 p-5">
@@ -70,6 +79,10 @@ const MyToys = () => {
         <div
           className="w-full overflow-x-auto p-5"
         >
+          <select onChange={handelChange} className="px-5 py-1 border-2 border-gray-800 rounded" name="" id="">
+              <option value="1">Ascending Price</option>
+              <option value="-1">Descending Price</option>
+            </select>
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
@@ -89,7 +102,6 @@ const MyToys = () => {
               {myToy &&
                 myToy.map((data, index) => (
                   <>
-                    {" "}
                     <tr>
                       <th>{index + 1}</th>
                       <th>{data.toyName}</th>
@@ -122,9 +134,8 @@ const MyToys = () => {
           </table>
         </div>
       }
-
-      {<UpdateToyModal  setmyToy={setmyToy} myToy={myToy} singelUpdateToy={singelUpdateToy}></UpdateToyModal>}
-        </div>
+      {<UpdateToyModal setControl={setControl} control={control} singelUpdateToy={singelUpdateToy}></UpdateToyModal>}
+      </div>
     
     </div>
   );
