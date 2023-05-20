@@ -14,6 +14,9 @@ const Shope = () => {
   const [loading,setLoading] = useState(true);
   const [datas, setDatas] = useState();
   const naviget = useNavigate();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const viewButton = (id) => {
     if (!user) {
       Swal.fire({
@@ -91,7 +94,10 @@ const Shope = () => {
                       </div>
 
                       <div className="md:w-1/2 p-5 space-y-3">
-                        <h2 className="card-title">{data.toyName}</h2>
+                      <div className="flex gap-2">
+                      <h2 className="card-title">{data.toyName}</h2>
+                        <div className="badge badge-accent">Tranding</div>
+                      </div>
                         <p>Seller: {data.seller}</p>
                         <p>Price: ${data.price}</p>
                         <div className="flex gap-1 items-center">
@@ -136,7 +142,10 @@ const Shope = () => {
                       </div>
 
                       <div className="md:w-1/2 p-5 space-y-3">
-                        <h2 className="card-title">{data.toyName}</h2>
+                      <div className="flex gap-2">
+                      <h2 className="card-title">{data.toyName}</h2>
+                        <div className="badge badge-accent">New</div>
+                      </div>
                         <p>Seller: {data.seller}</p>
                         <p>Price: ${data.price}</p>
                         <div className="flex gap-1 items-center">

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
 
-const SliderComponent = ({ images }) => {
+const SliderComponent = ({ images,toy1 }) => {
   return (
     <div
       style={{
@@ -15,7 +16,7 @@ const SliderComponent = ({ images }) => {
       <div
         data-aos="fade-up"
         data-aos-duration="3000"
-        className="w-full max-w-6xl mx-auto h-full flex items-center p-5"
+        className="w-full max-w-6xl mx-auto h-full flex justify-between items-center p-5"
       >
         <div className="space-y-4">
           <h2 className="text-xl  text-[#02224D] font-semibold">
@@ -30,6 +31,9 @@ const SliderComponent = ({ images }) => {
               Shop Now
             </button>
           </Link>
+        </div>
+        <div>
+        <Lottie className="h-72" animationData={toy1} loop={true} />
         </div>
       </div>
     </div>

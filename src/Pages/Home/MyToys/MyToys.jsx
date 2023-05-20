@@ -17,6 +17,9 @@ const MyToys = () => {
          setLoading(false)
         });
   }, [myToy]);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const handleSingleData = (id) => {
     fetch(`http://localhost:5000/singleToy/${id}`)
       .then((res) => res.json())
@@ -99,9 +102,9 @@ const MyToys = () => {
                         <label
                           onClick={() => handleSingleData(data._id)}
                           htmlFor="my-modal-6"
-                          className="py-1 px-8 rounded-full bg-[#024E92] text-white cursor-pointer"
+                          className="py-1 px-5 rounded-full bg-[#024E92] text-white cursor-pointer"
                         >
-                          Edit
+                          Update
                         </label>
                       </th>
                       <th>

@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useLoaderData } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
 const SingleToy = () => {
+  
   const toy = useLoaderData();
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const {
     toyName,
     seller,

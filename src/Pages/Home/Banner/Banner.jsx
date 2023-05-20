@@ -1,6 +1,8 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-
+import toy1 from "../../../assets/Lotti/rakibs444.json";
+import toy2 from "../../../assets/Lotti/tiger.json";
+import toy3 from "../../../assets/Lotti/115619-learning-english.json";
 import SliderComponent from "./SliderComponent/SliderComponent";
 const Banner = () => {
   const [sliderRef] = useKeenSlider(
@@ -48,13 +50,13 @@ const Banner = () => {
      <div className="w-full">
      <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1">
-          <SliderComponent images={images1}></SliderComponent>
+          <SliderComponent images={images1} toy1={toy1}></SliderComponent>
         </div>
-        <div className="keen-slider__slide number-slide2"><SliderComponent images={images2}></SliderComponent></div>
-        <div className="keen-slider__slide number-slide3"><SliderComponent images={images3}></SliderComponent></div>
-        <div className="keen-slider__slide number-slide4"><SliderComponent images={images4}></SliderComponent></div>
+        <div className="keen-slider__slide number-slide2"><SliderComponent images={images2}  toy1={ toy2}></SliderComponent></div>
+        <div className="keen-slider__slide number-slide3"><SliderComponent images={images3} toy1={toy3}></SliderComponent></div>
+        <div className="keen-slider__slide number-slide4"><SliderComponent images={images4} toy1={toy1}></SliderComponent></div>
 
-        <div className="keen-slider__slide number-slide5"><SliderComponent images={images5}></SliderComponent></div>
+        <div className="keen-slider__slide number-slide5"><SliderComponent images={images5} toy1={toy2}></SliderComponent></div>
       </div>
      </div>
     </>
