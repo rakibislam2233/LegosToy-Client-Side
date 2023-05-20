@@ -2,7 +2,7 @@ import React from "react";
 import { Rating } from "@smastrom/react-rating";
 const TestimonialDetails = ({ img, name }) => {
   return (
-    <div className="w-80 py-10 px-5 rounded-2xl shadow-xl space-y-3">
+    <div className="w-80 py-10 px-5 rounded-2xl shadow-xl space-y-3 cursor-pointer">
       <div className="flex gap-2 items-center">
         <img className="w-10 h-10 rounded-full" src={img} alt="" />
         <h2 className="text-xl font-semibold">{name}</h2>

@@ -47,7 +47,7 @@ const AllToys = () => {
     const value = e.target.value;
     setShowResults(value);
   }
-  console.log(showResults);
+
   return (
     <div className="w-full pt-20 p-5">
       <h3 className="text-4xl text-center font-semibold ">All Toys</h3>

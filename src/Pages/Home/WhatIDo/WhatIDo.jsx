@@ -14,7 +14,7 @@ const WhatIDo = () => {
          <p className="font-semibold">WHAT WE DO</p>
           <h1 className="text-5xl font-bold">We help organize events for kids</h1>
           <p className="font-semibold">Fun, educational activities for every occasion with premium toys and snacks. Learn more about our services!</p>
-          <button className="btn btn-primary">Discover Now</button>
+          <button className="w-52 py-2 font-semibold text-white px-5 rounded-full bg-[#024E92]">Discover Now</button>
         </div>
       </div>
     </div>
