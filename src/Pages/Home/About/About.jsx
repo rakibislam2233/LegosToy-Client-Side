@@ -11,6 +11,7 @@ import toy7 from "../../../assets/Lotti/toy.json";
 import toy8 from "../../../assets/Lotti/rakib4.json";
 const About = () => {
   return (
+    <>
     <div className="w-full max-w-6xl mx-auto  py-10">
       <div className="text-center">
         <h2 className="text-2xl font-semibold">About</h2>
@@ -29,15 +30,17 @@ const About = () => {
           <Lottie className="h-52" animationData={toy8} loop={true} />
         </div>
       </Marquee>
-      <div className="hero">
+      
+    </div>
+    <div className="hero">
         <div className="hero-content flex-col lg:flex-row gap-4">
-          <div className="w-full md:w-1/2">
+          <div data-aos="zoom-in"  data-aos-duration="3000" className="w-full lg:w-1/2">
             <img
               src="https://i.postimg.cc/GppKJVwP/about-Images.png"
               className="w-full rounded-lg shadow-2xl"
             />
           </div>
-          <div className="w-full md:w-1/2">
+          <div  data-aos="zoom-in"  data-aos-duration="3000" className="w-full lg:w-1/2">
             <h1 className="text-5xl font-bold">
               We provide & offer premium service
             </h1>
@@ -52,7 +55,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
