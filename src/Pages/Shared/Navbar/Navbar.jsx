@@ -4,13 +4,15 @@ import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { FaUserTie } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
     const {user,logOut} = useContext(UserContext)
-    console.log(user);
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
     const handelLogout = ()=>{
       logOut()
       .then()

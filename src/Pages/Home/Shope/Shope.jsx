@@ -34,7 +34,7 @@ const Shope = () => {
     setCategory(e.target.value);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/getCategories/${category}`)
+    fetch(`https://legos-toy-server-side.vercel.app/getCategories/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setDatas(data)

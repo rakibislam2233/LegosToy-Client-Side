@@ -2,7 +2,7 @@ import Lottie from "lottie-react";
 import login from "../../../assets/Lotti/Login.json";
 import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import Swal from 'sweetalert2'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import {updateProfile } from "firebase/auth";
@@ -11,6 +11,9 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const { createNewUser,logOut,gitHubLogin,googleLogin} = useContext(UserContext)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const naviget = useNavigate()
   const handelSignUp = (e) => {
     e.preventDefault();

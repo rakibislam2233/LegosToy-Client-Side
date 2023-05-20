@@ -2,13 +2,16 @@ import Lottie from "lottie-react";
 import LoginLotti from "../../../assets/Lotti/Login.json";
 import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import Swal from 'sweetalert2'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const {login,googleLogin,gitHubLogin} = useContext(UserContext)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const location = useLocation();
 const naviget = useNavigate();
 const from = location?.state?.from.pathname || "/";

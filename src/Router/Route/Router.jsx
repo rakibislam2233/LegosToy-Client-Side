@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         {
           path:'/singleToy/:id',
           element:<PrivetRoute><SingleToy></SingleToy></PrivetRoute>,
-          loader:({params})=> fetch(`http://localhost:5000/singleToy/${params.id}`)
+          loader:({params})=> fetch(`https://legos-toy-server-side.vercel.app/singleToy/${params.id}`)
         },
         {
           path:'/myToy',

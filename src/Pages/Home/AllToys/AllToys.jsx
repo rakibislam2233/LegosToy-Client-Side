@@ -9,7 +9,7 @@ const AllToys = () => {
   const [loading, setLoading] = useState(true);
   const [showResults, setShowResults] = useState(20)
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy/${showResults}`)
+    fetch(`https://legos-toy-server-side.vercel.app/allToy/${showResults}`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);
@@ -28,7 +28,7 @@ const AllToys = () => {
     if (search === undefined) {
       return setError("Please Enter value");
     }
-    fetch(`http://localhost:5000/searchByToyName/${search}`)
+    fetch(`https://legos-toy-server-side.vercel.app/searchByToyName/${search}`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);
@@ -36,7 +36,7 @@ const AllToys = () => {
       });
   };
   const handleSeemore = () => {
-    fetch(`http://localhost:5000/allToy`)
+    fetch(`https://legos-toy-server-side.vercel.app/allToy`)
       .then((res) => res.json())
       .then((data) => {
         setToy(data);

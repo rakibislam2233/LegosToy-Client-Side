@@ -10,7 +10,7 @@ const MyToys = () => {
   const [singelUpdateToy, setsingelUpdateToy] = useState([]);
   const [loading,setLoading] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:5000/myToy/${user?.email}`)
+    fetch(`https://legos-toy-server-side.vercel.app/myToy/${user?.email}`)
       .then((res) => res.json())
       .then((data) =>{
          setmyToy(data)
@@ -21,7 +21,7 @@ const MyToys = () => {
     window.scrollTo(0, 0)
   }, [])
   const handleSingleData = (id) => {
-    fetch(`http://localhost:5000/singleToy/${id}`)
+    fetch(`https://legos-toy-server-side.vercel.app/singleToy/${id}`)
       .then((res) => res.json())
       .then((data) =>{ 
         setsingelUpdateToy(data)
@@ -39,7 +39,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteSingelToy/${id}`, {
+        fetch(`https://legos-toy-server-side.vercel.app/deleteSingelToy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

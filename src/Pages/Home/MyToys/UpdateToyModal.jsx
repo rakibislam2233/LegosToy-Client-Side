@@ -20,7 +20,7 @@ const UpdateToyModal = ({singelUpdateToy,setmyToy,myToy}) => {
     const data={
       toyName,seller,sellerEmail,quantity,price,image,category,rating,description
     }
-    fetch(`http://localhost:5000/updateToy/${_id}`,{
+    fetch(`https://legos-toy-server-side.vercel.app/updateToy/${_id}`,{
       method:'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
