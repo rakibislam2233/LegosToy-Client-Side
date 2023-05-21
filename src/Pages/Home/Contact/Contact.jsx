@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import ContactNow from "../../../assets/Lotti/contact-2.json";
+import { Helmet } from "react-helmet";
 const Contact = () => {
   return (
     <section className="py-10">

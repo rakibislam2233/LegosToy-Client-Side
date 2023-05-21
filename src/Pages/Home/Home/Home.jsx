@@ -7,6 +7,7 @@ import Shope from "../Shope/Shope";
 import Testimonial from "../Testimonial/Testimonial";
 import WhatIDo from "../WhatIDo/WhatIDo";
 import Fetures from "../Fetures/Fetures";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
     useEffect(() => {
@@ -14,6 +15,9 @@ const Home = () => {
       }, [])
     return (
        <>
+       <Helmet>
+        <title>Home</title>
+      </Helmet>
        <Banner></Banner>
        <About></About>
        <Gallerys></Gallerys>

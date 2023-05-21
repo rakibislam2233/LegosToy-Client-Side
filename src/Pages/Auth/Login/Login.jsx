@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const [error, setError] = useState(null);
   const {login,googleLogin,gitHubLogin} = useContext(UserContext)
@@ -66,6 +67,9 @@ const from = location?.state?.from.pathname || "/";
   };
   return (
     <div className="hero min-h-screen bg-base-200 pt-20">
+      <Helmet>
+        <title>LegoLandmark|Login</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row gap-5">
         <div className="w-full md:max-w-1/2 text-center lg:text-left">
           <Lottie animationData={LoginLotti} loop={true} />

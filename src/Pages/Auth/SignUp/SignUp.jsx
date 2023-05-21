@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import {updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const [error, setError] = useState(null);
@@ -79,6 +80,9 @@ const SignUp = () => {
   };
   return (
     <div className="hero min-h-screen bg-base-200 pt-20">
+      <Helmet>
+        <title>LegoLandmark|SignUp</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row gap-5">
         <div className="w-full md:max-w-1/2 text-center lg:text-left">
           <Lottie animationData={login} loop={true} />

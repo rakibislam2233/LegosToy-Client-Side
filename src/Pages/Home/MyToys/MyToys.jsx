@@ -4,6 +4,7 @@ import UpdateToyModal from "./UpdateToyModal";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import Spinner from "../../../assets/Lotti/loading.json";
+import { Helmet } from "react-helmet";
 const MyToys = () => {
   const [myToy, setmyToy] = useState();
   const { user } = useContext(UserContext);
@@ -66,6 +67,9 @@ const MyToys = () => {
   }
   return (
     <div>
+       <Helmet>
+        <title>LegoLandmark|My Toy</title>
+      </Helmet>
         <div  className="w-full pt-20 p-5">
         <h3 className="text-4xl text-center font-semibold ">My Toys</h3>
         {myToy?.length == 0 ? (
@@ -77,19 +81,20 @@ const MyToys = () => {
           className="w-full overflow-x-auto p-5"
         >
           <select onChange={handelChange} className="px-5 py-1 border-2 border-gray-800 rounded" name="" id="">
-              <option value="1">Ascending Price</option>
-              <option value="-1">Descending Price</option>
+              <option value="1">Ascending Order</option>
+              <option value="-1">Descending Order</option>
             </select>
           <table className="table table-zebra w-full">
             {/* head */}
             <thead>
               <tr>
                 <th>Si</th>
+                <th>Photo</th>
                 <th>Name</th>
                 <th>SellerEmail</th>
                 <th>Sub-category</th>
                 <th>Price</th>
-                <th>Available quantity</th>
+                <th>Quantity</th>
                 <th>Rating</th>
                 <th>Edit</th>
                 <th>Action</th>
@@ -101,10 +106,11 @@ const MyToys = () => {
                   <>
                     <tr>
                       <th>{index + 1}</th>
+                      <th><img className="w-16 h-16 rounded-full" src={data.image} alt="" /></th>
                       <th>{data.toyName}</th>
                       <th>{data.sellerEmail}</th>
                       <th>{data.category}</th>
-                      <th>{data.price}</th>
+                      <th>${data.price}</th>
                       <th>{data.quantity}</th>
                       <th>{data.rating}</th>
                       <th>

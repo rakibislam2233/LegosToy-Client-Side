@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 const AddToy = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -12,16 +13,14 @@ const AddToy = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (datas) => {
     fetch(`https://legos-toy-server-side.vercel.app/addedToy`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify(datas),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             position: "center",
@@ -35,6 +34,9 @@ const AddToy = () => {
   };
   return (
     <div className="hero min-h-screen bg-base-200 pt-20 p-5">
+      <Helmet>
+        <title>LegoLandmark|Add Toy</title>
+      </Helmet>
       <div
         data-aos="fade-up"
         data-aos-duration="2000"
@@ -111,6 +113,7 @@ const AddToy = () => {
                   placeholder="Enter Toy Price"
                   type="number"
                   min="100"
+                  max='900'
                 />
               </div>
               <div className="form-control w-full">

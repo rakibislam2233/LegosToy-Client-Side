@@ -19,10 +19,10 @@ const SliderComponent = ({ images,toy1 }) => {
         className="w-full max-w-6xl mx-auto h-full flex justify-between items-center p-5"
       >
         <div className="space-y-4">
-          <h2 className="text-xl  text-[#02224D] font-semibold">
+          <h2 className="text-xl  text-white font-semibold">
             Legos Collection
           </h2>
-          <h2 className="text-5xl  font-bold text-white">
+          <h2 className="text-5xl  font-bold text-teal-600">
             Kids Lego Toys Store Shopify
           </h2>
           <Link className="block " to="/menu">

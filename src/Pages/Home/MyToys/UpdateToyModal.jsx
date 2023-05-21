@@ -37,6 +37,7 @@ const UpdateToyModal = ({singelUpdateToy,setControl,control}) => {
           timer: 1500
         })
         setControl(!control)
+        form.reset()
       }else{
         Swal.fire({
           icon: "error",

@@ -4,6 +4,7 @@ import toy1 from "../../../assets/Lotti/rakibs444.json";
 import toy2 from "../../../assets/Lotti/tiger.json";
 import toy3 from "../../../assets/Lotti/115619-learning-english.json";
 import SliderComponent from "./SliderComponent/SliderComponent";
+import { Helmet } from "react-helmet";
 const Banner = () => {
   const [sliderRef] = useKeenSlider(
     {
@@ -48,6 +49,9 @@ const Banner = () => {
   return (
     <>
      <div className="w-full">
+     <Helmet>
+        <title>Home</title>
+      </Helmet>
      <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1">
           <SliderComponent images={images1} toy1={toy1}></SliderComponent>

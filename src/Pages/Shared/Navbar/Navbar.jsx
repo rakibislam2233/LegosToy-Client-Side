@@ -75,12 +75,6 @@ const Navbar = () => {
             Blogs
           </NavLink>
           <NavLink
-            to="/contact"
-            className={({ isActive }) => (isActive ? "text-[#742BFD]" : "")}
-          >
-            Contact
-          </NavLink>
-          <NavLink
             to="/signUp"
             className={({ isActive }) => (isActive ? "text-[#742BFD]" : "")}
           >
