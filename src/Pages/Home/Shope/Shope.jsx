@@ -41,7 +41,6 @@ const Shope = () => {
         setLoading(false)
       });
   }, [category]);
-  console.log(datas);
   return (
     <>
     <div className="w-full max-w-6xl mx-auto py-5">
