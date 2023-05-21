@@ -12,7 +12,7 @@ import toy8 from "../../../assets/Lotti/rakib4.json";
 const About = () => {
   return (
     <>
-      <div className="hero py-10">
+      <div className="hero py-5">
         <div className="hero-content flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-1/2">
             <img
@@ -44,7 +44,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="w-full max-w-6xl mx-auto  py-10">
+      <div className="w-full max-w-6xl mx-auto  py-5">
         <Marquee>
           <div className="w-full flex gap-2 py-5">
             <Lottie className="h-52" animationData={toy1} loop={true} />
