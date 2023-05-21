@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8 space-y-3">
             <img
               className="w-12 h-12 rounded-full cursor-pointer"
-              src="../../../../src/assets/images/logo/56647.jpg"
+              src="https://i.postimg.cc/QChSVHTs/56647.jpg"
               alt=""
             />
             <h3 className="font-semibold text-2xl">LegoLandmark</h3>

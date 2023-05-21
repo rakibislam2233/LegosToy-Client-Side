@@ -1,12 +1,11 @@
 import Lottie from "lottie-react";
 import LoginLotti from "../../../assets/Lotti/Login.json";
-import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+import { BsGithub, BsGoogle} from "react-icons/bs";
 import Swal from 'sweetalert2'
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const {login,googleLogin,gitHubLogin} = useContext(UserContext)
   useEffect(() => {
@@ -93,26 +92,17 @@ const from = location?.state?.from.pathname || "/";
                 />
               </div>
             </div>
-            <div className="form-control relative">
+            <div className="form-control">
               <label className="label">
                 <span className="text-xl">Password</span>
               </label>
                 <input
                   className="w-full py-2  px-3  border rounded-full"
-                  type={`${showPassword ? "text" : "password"}`}
+                  type='password'
                   name="password"
                   placeholder="Enter Your Password"
                   required
                 />
-            </div>
-            <div className="absolute top-[175px] right-5 cursor-pointer">
-              <span onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? (
-                  <BsEyeFill></BsEyeFill>
-                ) : (
-                  <BsEyeSlashFill></BsEyeSlashFill>
-                )}
-              </span>
             </div>
             <button className="bg-[#742BFD] w-full text-white text-sm uppercase rounded-full  px-6 py-3 my-4">
               Login

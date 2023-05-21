@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import login from "../../../assets/Lotti/Login.json";
-import { BsGithub, BsGoogle, BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
+import { BsGithub, BsGoogle} from "react-icons/bs";
 import Swal from 'sweetalert2'
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,7 +8,6 @@ import { UserContext } from "../../../Context/AuthProvider/AuthProvider";
 import {updateProfile } from "firebase/auth";
 
 const SignUp = () => {
-  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const { createNewUser,logOut,gitHubLogin,googleLogin} = useContext(UserContext)
   useEffect(() => {
@@ -138,20 +137,11 @@ const SignUp = () => {
               </label>
               <input
                 className="w-full py-2  px-3  border rounded-full"
-                type={`${showPassword ? "text" : "password"}`}
+                type="password"
                 name="password"
                 placeholder="Enter Your Password"
                 required
               />
-            </div>
-            <div className="absolute top-[330px] right-5 cursor-pointer">
-              <span onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? (
-                  <BsEyeFill></BsEyeFill>
-                ) : (
-                  <BsEyeSlashFill></BsEyeSlashFill>
-                )}
-              </span>
             </div>
             <button className="bg-[#742BFD] w-full text-white text-sm uppercase rounded-full  px-6 py-3 mt-2">
              Sign Up

@@ -12,9 +12,7 @@ const MyToys = () => {
   const [control,setControl] = useState(false)
   const [sort,setsort] = useState(1)
   useEffect(() => {
-    // fetch(`https://legos-toy-server-side.vercel.app/myToy/${user?.email}`)
-    // fetch(`https://legos-toy-server-side.vercel.app/myToyemailSort/?email=${user?.email}&&%20sort=${sort}`)
-    fetch(`http://localhost:5000/myToyemailSort/?email=${user?.email}&&%20sort=${sort}`)
+    fetch(`https://legos-toy-server-side.vercel.app/myToyEmail/?email=${user?.email}&sort=${sort}`)
       .then((res) => res.json())
       .then((data) =>{
          setmyToy(data)
@@ -66,7 +64,6 @@ const MyToys = () => {
     const value = e.target.value;
     setsort(value);
   }
-  console.log(sort);
   return (
     <div>
         <div  className="w-full pt-20 p-5">

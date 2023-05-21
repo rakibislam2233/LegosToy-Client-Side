@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="flex gap-2 items-center ">
           <img
             className="w-12 h-12 rounded-full cursor-pointer"
-            src="../../../../src/assets/images/logo/56647.jpg"
+            src="https://i.postimg.cc/QChSVHTs/56647.jpg"
             alt=""
           />
           <Link to={"/"}>
