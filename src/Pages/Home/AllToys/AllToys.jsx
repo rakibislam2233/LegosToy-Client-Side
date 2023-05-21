@@ -71,7 +71,7 @@ const AllToys = () => {
             Search
           </button>
         </div>
-        <h2 className="ml-96 text-rose-700">{error}</h2>
+        <h2 className="lg:ml-96 text-rose-700">{error}</h2>
       </div>
 
       {toy?.length == 0 ? (
