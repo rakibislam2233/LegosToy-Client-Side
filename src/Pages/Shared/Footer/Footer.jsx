@@ -7,6 +7,7 @@ import {
 } from "react-icons/bs";
 const Footer = () => {
   return (
+    // footer section star
     <div className="bg-gray-50 sm:pt-16 lg:pt-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
@@ -21,7 +22,7 @@ const Footer = () => {
               We perhtmlForm baby and toddler photoshoots on special occasions,
               events and/or with our toys upon parents’ requests.
             </p>
-    <h3 className="text-2xl font-semibold">Follow Us</h3>
+            <h3 className="text-2xl font-semibold">Follow Us</h3>
             <ul className="flex items-center space-x-3 mt-9">
               <li>
                 <a
@@ -192,13 +193,17 @@ const Footer = () => {
               Subscribe
             </button>
             <div>
-            <p className="font-semibold">Address</p> 
-             Level-4, 34, Thakurgaon Sadar Thakurgaon;
-             <br />
-             <span className="font-semibold">Email:</span>
-             <span href="#" className="text-blue-700"> <a href="">LegoLandmark2023@gmail.Com</a></span>
-             <br />
-             <span className="font-semibold">Helpline:</span> <span>01319101179</span>
+              <p className="font-semibold">Address</p>
+              Level-4, 34, Thakurgaon Sadar Thakurgaon;
+              <br />
+              <span className="font-semibold">Email:</span>
+              <span href="#" className="text-blue-700">
+                {" "}
+                <a href="">LegoLandmark2023@gmail.Com</a>
+              </span>
+              <br />
+              <span className="font-semibold">Helpline:</span>{" "}
+              <span>01319101179</span>
             </div>
           </div>
         </div>
@@ -209,6 +214,7 @@ const Footer = () => {
         </p>
       </div>
     </div>
+    // footer section end
   );
 };
 

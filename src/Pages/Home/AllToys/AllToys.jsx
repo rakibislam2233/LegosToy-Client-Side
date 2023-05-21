@@ -24,10 +24,11 @@ const AllToys = () => {
     const value = e.target.value;
     SetSearch(value);
   };
+  //seracchtoyName function here 
   const searchToyName = () => {
     setError("");
     if (search === undefined) {
-      return setError("Please Enter value");
+      return setError("Please Enter Any Toy Name");
     }
     fetch(`https://legos-toy-server-side.vercel.app/searchByToyName/${search}`)
       .then((res) => res.json())
@@ -36,6 +37,7 @@ const AllToys = () => {
         setLoading(false);
       });
   };
+  //handleseeMore function here
   const handleSeemore = () => {
     fetch(`https://legos-toy-server-side.vercel.app/allToy`)
       .then((res) => res.json())
@@ -46,6 +48,7 @@ const AllToys = () => {
       });
   };
   return (
+    // allToy section start
     <div className="w-full pt-20 p-5">
       <Helmet>
         <title>LegoLandmark|All Toy</title>
@@ -139,6 +142,7 @@ const AllToys = () => {
         </>
       )}
     </div>
+    //alltoy section end
   );
 };
 

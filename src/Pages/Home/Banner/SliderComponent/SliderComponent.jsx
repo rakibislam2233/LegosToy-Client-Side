@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 
-const SliderComponent = ({ images,toy1 }) => {
+const SliderComponent = ({ images, toy1 }) => {
   return (
+    // this is slidercomponent
     <div
       style={{
         backgroundImage: `url(${images})`,
@@ -25,15 +26,16 @@ const SliderComponent = ({ images,toy1 }) => {
           <h2 className="text-5xl  font-bold text-teal-600">
             Kids Lego Toys Store Shopify
           </h2>
-          <Link className="block " to="/menu">
-            <button  data-aos="fade-up"
-        data-aos-duration="3000" className="py-3 px-5 w-44 bg-[#752BFD] rounded-full shadow-lg font-semibold  text-white hover:text-[#02224D] hover:bg-[#ffffff] duration-500">
-              Shop Now
-            </button>
-          </Link>
+          <button
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="py-3 px-5 w-44 bg-[#752BFD] rounded-full shadow-lg font-semibold  text-white hover:text-[#02224D] hover:bg-[#ffffff] duration-500"
+          >
+            Shop Now
+          </button>
         </div>
         <div>
-        <Lottie className="h-72" animationData={toy1} loop={true} />
+          <Lottie className="h-72" animationData={toy1} loop={true} />
         </div>
       </div>
     </div>

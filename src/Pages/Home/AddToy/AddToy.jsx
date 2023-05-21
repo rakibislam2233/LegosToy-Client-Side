@@ -7,6 +7,7 @@ const AddToy = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  //here is a useContext
   const { user } = useContext(UserContext);
   const {
     register,
@@ -33,6 +34,7 @@ const AddToy = () => {
       });
   };
   return (
+    // addtoy page start
     <div className="hero min-h-screen bg-base-200 pt-20 p-5">
       <Helmet>
         <title>LegoLandmark|Add Toy</title>
@@ -182,6 +184,7 @@ const AddToy = () => {
         </div>
       </div>
     </div>
+    // addtoy page end
   );
 };
 

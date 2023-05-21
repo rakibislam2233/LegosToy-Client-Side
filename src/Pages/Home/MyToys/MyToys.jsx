@@ -12,6 +12,7 @@ const MyToys = () => {
   const [loading,setLoading] = useState(true);
   const [control,setControl] = useState(false)
   const [sort,setsort] = useState(1)
+  //get all data from server
   useEffect(() => {
     fetch(`https://legos-toy-server-side.vercel.app/myToyEmail/?email=${user?.email}&sort=${sort}`)
       .then((res) => res.json())
@@ -23,6 +24,7 @@ const MyToys = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  //get singledata from server 
   const handleSingleData = (id) => {
     fetch(`https://legos-toy-server-side.vercel.app/singleToy/${id}`)
       .then((res) => res.json())
@@ -31,6 +33,7 @@ const MyToys = () => {
         setLoading(false)
       });
   };
+  //handle remove function
   const handleRemoveToy = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -61,11 +64,13 @@ const MyToys = () => {
       }
     });
   };
+  //handel change funtion
   const handelChange = (e) => {
     const value = e.target.value;
     setsort(value);
   }
   return (
+    // my toy section start
     <div>
        <Helmet>
         <title>LegoLandmark|My Toy</title>
@@ -141,6 +146,7 @@ const MyToys = () => {
       </div>
     
     </div>
+    // my toy section end
   );
 };
 

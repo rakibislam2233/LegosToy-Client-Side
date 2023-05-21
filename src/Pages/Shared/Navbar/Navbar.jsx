@@ -20,6 +20,7 @@ const Navbar = () => {
       });
   };
   return (
+    // navigation bar start
     <nav className="w-full fixed z-50 bg-white py-5 h-20 px-5">
       <div className="max-w-6xl mx-auto  flex justify-between items-center font-bodyFont">
         <div className="flex gap-2 items-center ">
@@ -36,7 +37,7 @@ const Navbar = () => {
           </Link>
         </div>
         <ul
-          className={`w-[75%] h-[100vh] lg:w-auto lg:h-auto bg-white lg:bg-transparent text-center text-[#02214D] font-semibold  duration-500 lg:duration-0  flex flex-col lg:flex-row gap-5 absolute lg:static  items-center ${
+          className={`w-full h-[100vh] lg:w-auto lg:h-auto bg-white lg:bg-transparent text-center text-[#02214D] font-semibold  duration-500 lg:duration-0  flex flex-col lg:flex-row gap-5 absolute lg:static  items-center ${
             show ? "top-[80px] space-y-1 left-0 " : "top-[80px]  left-[-700px]"
           }`}
         >
@@ -129,6 +130,7 @@ const Navbar = () => {
         </>
       </div>
     </nav>
+    // navigation bar end
   );
 };
 

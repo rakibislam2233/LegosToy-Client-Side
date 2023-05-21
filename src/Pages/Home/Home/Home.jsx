@@ -10,23 +10,25 @@ import WhatIDo from "../WhatIDo/WhatIDo";
 import { Helmet } from "react-helmet";
 
 const Home = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])
-    return (
-       <>
-       <Helmet>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <>
+    {/* here is home page  */}
+      <Helmet>
         <title>Home</title>
       </Helmet>
-       <Banner></Banner>
-       <About></About>
-       <Gallerys></Gallerys>
-       <Shope></Shope>
-       <WhatIDo></WhatIDo>
-       <Testimonial></Testimonial>
-       <Contact></Contact>
-       </>
-    );
+      <Banner></Banner>
+      <About></About>
+      <Gallerys></Gallerys>
+      <Shope></Shope>
+      <WhatIDo></WhatIDo>
+      <Testimonial></Testimonial>
+      <Contact></Contact>
+       {/*  home page end  */}
+    </>
+  );
 };
 
 export default Home;

@@ -3,6 +3,7 @@ import ContactNow from "../../../assets/Lotti/contact-2.json";
 import { Helmet } from "react-helmet";
 const Contact = () => {
   return (
+    // here is a contact section
     <section className="py-10">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center">

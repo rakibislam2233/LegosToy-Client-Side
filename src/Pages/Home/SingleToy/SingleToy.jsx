@@ -21,6 +21,7 @@ const SingleToy = () => {
   } = toy;
   return (
     <div>
+      {/* singletoy section start */}
       <div className="w-full max-w-4xl mx-auto py-32 p-5">
         <div
           data-aos="zoom-in"
@@ -52,6 +53,7 @@ const SingleToy = () => {
           
         </div>
       </div>
+      {/* singletoy section end */}
     </div>
   );
 };

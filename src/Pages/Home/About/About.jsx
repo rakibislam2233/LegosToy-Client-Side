@@ -12,6 +12,7 @@ import toy8 from "../../../assets/Lotti/rakib4.json";
 const About = () => {
   return (
     <>
+    {/* this is a about section.here is 2 part one about details and reat marquee */}
       <div className="hero py-5">
         <div className="hero-content flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-1/2">

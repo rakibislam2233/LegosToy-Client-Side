@@ -13,45 +13,61 @@ import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import SingleToy from "../../Pages/Home/SingleToy/SingleToy";
 
 const router = createBrowserRouter([
+  // main route here 
   {
     path: "/",
     element: <MainLayOut></MainLayOut>,
     errorElement: <ErrorPage></ErrorPage>,
-    children:[
-        {
-            path:'/',
-            element:<Home></Home>
-        },
-        {
-          path:'/allToy',
-          element:<AllToys></AllToys>
-        },
-        {
-          path:'/singleToy/:id',
-          element:<PrivetRoute><SingleToy></SingleToy></PrivetRoute>,
-          loader:({params})=> fetch(`https://legos-toy-server-side.vercel.app/singleToy/${params.id}`)
-        },
-        {
-          path:'/myToy',
-          element:<PrivetRoute><MyToys></MyToys></PrivetRoute> 
-        },
-        {
-          path:'/addToy',
-          element:<PrivetRoute><AddToy></AddToy></PrivetRoute> 
-        },
-        {
-          path:'//blogs',
-          element:<Blogs></Blogs>
-        },
-        {
-          path:'/login',
-          element:<Login></Login>
-        },
-        {
-          path:'//signUp',
-          element:<SignUp></SignUp>
-        }
-    ]
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/allToy",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "/singleToy/:id",
+        element: (
+          <PrivetRoute>
+            <SingleToy></SingleToy>
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://legos-toy-server-side.vercel.app/singleToy/${params.id}`
+          ),
+      },
+      {
+        path: "/myToy",
+        element: (
+          <PrivetRoute>
+            <MyToys></MyToys>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/addToy",
+        element: (
+          <PrivetRoute>
+            <AddToy></AddToy>
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "//blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "//signUp",
+        element: <SignUp></SignUp>,
+      },
+    ],
   },
 ]);
 export default router;

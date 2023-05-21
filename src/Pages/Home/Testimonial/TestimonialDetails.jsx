@@ -1,6 +1,7 @@
 import React from "react";
 import { Rating } from "@smastrom/react-rating";
 const TestimonialDetails = ({ img, name }) => {
+  // here is testimonial section detail
   return (
     <div className="w-80 py-10 px-5 rounded-2xl shadow-xl space-y-3 cursor-pointer">
       <div className="flex gap-2 items-center">
@@ -13,6 +14,7 @@ const TestimonialDetails = ({ img, name }) => {
       </h2>
       <Rating style={{ maxWidth: 100 }} readOnly value={4.5} />
     </div>
+  // testimonialdetails section end
   );
 };
 

@@ -2,8 +2,9 @@ import { Helmet } from "react-helmet";
 
 const Blogs = () => {
   return (
+    //this is a blogs section
     <div className="w-full max-w-6xl mx-auto pt-20 py-10">
-         <Helmet>
+      <Helmet>
         <title>LegoLandmark|Blogs</title>
       </Helmet>
       <h2 className="text-4xl font-semibold text-center">Blogs</h2>
@@ -61,14 +62,19 @@ const Blogs = () => {
         </div>
         <div>
           <h2 className="font-semibold text-xl">
-            Question4:What is MongoDB aggregate and how does it work 
+            Question4:What is MongoDB aggregate and how does it work
           </h2>
           <p className="font-semibold">
-            Ans:Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.
+            Ans:Aggregation is a way of processing a large number of documents
+            in a collection by means of passing them through different stages.
+            The stages make up what is known as a pipeline. The stages in a
+            pipeline can filter, sort, group, reshape and modify documents that
+            pass through the pipeline.
           </p>
         </div>
       </div>
     </div>
+    //blogs section end
   );
 };
 

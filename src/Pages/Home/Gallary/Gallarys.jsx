@@ -2,6 +2,7 @@ import React from "react";
 const Gallerys = () => {
   return (
     <>
+    {/* this is a gallery section */}
       <div className="w-full py-5">
         <h3 className="text-4xl text-center font-semibold py-8 ">
           Our Gallery
@@ -18,7 +19,11 @@ const Gallerys = () => {
             />
             <div className="bg-[#024E92] w-full h-full opacity-0 hover:opacity-50 duration-500 absolute top-0 "></div>
           </div>
-          <div data-aos="zoom-out" data-aos-duration="3000" className=" cursor-pointer  relative border">
+          <div
+            data-aos="zoom-out"
+            data-aos-duration="3000"
+            className=" cursor-pointer  relative border"
+          >
             <img
               className="w-full h-96"
               src="https://i.postimg.cc/G3x5hpHS/gallery-3.png"
@@ -40,7 +45,11 @@ const Gallerys = () => {
           </div>
         </div>
         <div className="w-full h-full grid lg:grid-cols-4">
-          <div data-aos="zoom-in" data-aos-duration="3000" className=" cursor-pointer relative border">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="3000"
+            className=" cursor-pointer relative border"
+          >
             <img
               className="w-full h-96"
               src="https://i.postimg.cc/D06jCx9K/gallery-6.png"
@@ -84,8 +93,11 @@ const Gallerys = () => {
             />
             <div className="bg-[#024E92] w-full h-full opacity-0 hover:opacity-50 duration-500 absolute top-0 "></div>
           </div>
-          <div  data-aos="zoom-in"
-              data-aos-duration="3000" className=" cursor-pointer  relative border">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="3000"
+            className=" cursor-pointer  relative border"
+          >
             <img
               className="w-full h-96"
               src="https://i.postimg.cc/2j9PHvKS/banner5.jpgg"
@@ -93,8 +105,11 @@ const Gallerys = () => {
             />
             <div className="bg-[#024E92] w-full h-full opacity-0 hover:opacity-50 duration-500 absolute top-0 "></div>
           </div>
-          <div  data-aos="fade-up"
-              data-aos-duration="3000" className="lg:col-span-2  cursor-pointer  relative border">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="3000"
+            className="lg:col-span-2  cursor-pointer  relative border"
+          >
             <img
               className="w-full h-96"
               src="https://i.postimg.cc/26zPtxYV/banner4.jpg"
@@ -104,6 +119,7 @@ const Gallerys = () => {
           </div>
         </div>
       </div>
+       {/* gallery section end */}
     </>
   );
 };

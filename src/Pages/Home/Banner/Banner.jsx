@@ -49,9 +49,11 @@ const Banner = () => {
   return (
     <>
      <div className="w-full">
+      {/* this is a react helmet */}
      <Helmet>
         <title>Home</title>
       </Helmet>
+      {/* banner section added */}
      <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1">
           <SliderComponent images={images1} toy1={toy1}></SliderComponent>
@@ -62,6 +64,7 @@ const Banner = () => {
 
         <div className="keen-slider__slide number-slide5"><SliderComponent images={images5} toy1={toy2}></SliderComponent></div>
       </div>
+      {/* banner section end */}
      </div>
     </>
   );

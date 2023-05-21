@@ -17,6 +17,7 @@ const Shope = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  //viewbutton functionality
   const viewButton = (id) => {
     if (!user) {
       Swal.fire({
@@ -30,9 +31,11 @@ const Shope = () => {
       naviget(`/singleToy/${id}`);
     }
   };
+  //handle click functionality
   const handelClick = (e) => {
     setCategory(e.target.value);
   };
+  //get all data from server side
   useEffect(() => {
     fetch(`https://legos-toy-server-side.vercel.app/getCategories/${category}`)
       .then((res) => res.json())
@@ -43,6 +46,7 @@ const Shope = () => {
   }, [category]);
   return (
     <>
+    {/* shope section add */}
     <div className="w-full max-w-6xl mx-auto py-5">
       <h3 className="text-4xl text-center font-semibold py-5 ">Our Shope</h3>
       {
@@ -222,6 +226,7 @@ const Shope = () => {
     <div className="w-full  h-full">
         <img  data-aos-duration="3000"  className="w-full h-full rounded-xl" src="https://i.postimg.cc/G23h7Ph1/images.jpg" alt="" />
        </div>
+       {/* shope section end */}
     </>
   );
 };
