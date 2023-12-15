@@ -5,6 +5,7 @@ import {
   BsLinkedin,
   BsGithub,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     // footer section star
@@ -12,12 +13,16 @@ const Footer = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8 space-y-3">
+            <div className="flex gap-3 items-center">
             <img
               className="w-12 h-12 rounded-full cursor-pointer"
               src="https://i.postimg.cc/QChSVHTs/56647.jpg"
               alt=""
             />
-            <h3 className="font-semibold text-2xl">LegoLandmark</h3>
+          <span className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
+            Toy Haven
+            </span>
+            </div>
             <p className="text-base leading-relaxed text-gray-600 py2">
               We perhtmlForm baby and toddler photoshoots on special occasions,
               events and/or with our toys upon parents’ requests.

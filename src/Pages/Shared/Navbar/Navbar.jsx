@@ -30,9 +30,8 @@ const Navbar = () => {
             alt=""
           />
           <Link to={"/"}>
-            {" "}
-            <h3 className="text-2xl cursor-pointer font-bold text-[#02214D]">
-              Lego<span className="text-[#742BFD]">Landmark</span>
+            <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
+            Toy Haven
             </h3>
           </Link>
         </div>
