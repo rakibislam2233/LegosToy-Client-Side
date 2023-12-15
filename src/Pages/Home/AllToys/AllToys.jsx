@@ -24,7 +24,7 @@ const AllToys = () => {
     const value = e.target.value;
     SetSearch(value);
   };
-  //seracchtoyName function here 
+  //seracchtoyName function here
   const searchToyName = () => {
     setError("");
     if (search === undefined) {
@@ -51,7 +51,7 @@ const AllToys = () => {
     // allToy section start
     <div className="w-full pt-20 p-5">
       <Helmet>
-        <title>LegoLandmark|All Toy</title>
+        <title>All Toy | LegoLandmark</title>
       </Helmet>
       <h3 className="text-4xl text-center font-semibold ">All Toys</h3>
       <div className=" py-3 ">
@@ -110,7 +110,13 @@ const AllToys = () => {
                     <>
                       <tr key={index}>
                         <th>{index + 1}</th>
-                        <th><img className="w-16 h-16 rounded-full" src={data.image} alt="" /></th>
+                        <th>
+                          <img
+                            className="w-16 h-16 rounded-full"
+                            src={data.image}
+                            alt=""
+                          />
+                        </th>
                         <th>{data.toyName}</th>
                         <th>{data.seller}</th>
                         <th>{data.category}</th>

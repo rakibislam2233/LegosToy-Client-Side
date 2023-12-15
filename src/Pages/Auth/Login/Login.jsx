@@ -68,7 +68,7 @@ const from = location?.state?.from.pathname || "/";
   return (
     <div className="hero min-h-screen bg-base-200 pt-20">
       <Helmet>
-        <title>LegoLandmark|Login</title>
+        <title>Login | LegoLandmark</title>
       </Helmet>
       <div className="hero-content flex-col lg:flex-row gap-5">
         <div className="w-full md:max-w-1/2 text-center lg:text-left">

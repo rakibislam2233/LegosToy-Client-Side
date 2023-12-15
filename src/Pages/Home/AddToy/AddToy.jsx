@@ -37,7 +37,7 @@ const AddToy = () => {
     // addtoy page start
     <div className="hero min-h-screen bg-base-200 pt-20 p-5">
       <Helmet>
-        <title>LegoLandmark|Add Toy</title>
+        <title>Add Toy | LegoLandmark</title>
       </Helmet>
       <div
         data-aos="fade-up"

@@ -73,7 +73,7 @@ const MyToys = () => {
     // my toy section start
     <div>
        <Helmet>
-        <title>LegoLandmark|My Toy</title>
+        <title>My Toy | LegoLandmark</title>
       </Helmet>
         <div  className="w-full pt-20 p-5">
         <h3 className="text-4xl text-center font-semibold ">My Toys</h3>
