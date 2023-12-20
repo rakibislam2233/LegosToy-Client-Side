@@ -31,7 +31,7 @@ const Navbar = () => {
           />
           <Link to={"/"}>
             <h3 className="text-3xl font-bold text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text">
-            Toy Haven
+            LegosToy
             </h3>
           </Link>
         </div>
